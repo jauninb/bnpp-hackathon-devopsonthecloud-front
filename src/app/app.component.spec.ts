@@ -8,7 +8,10 @@ describe('AppComponent', () => {
         AppComponent
       ],
       imports: [
-        RouterTestingModule
+        RouterTestingModule.withRoutes(routes)
+      ],
+      providers: [
+        {provide: APP_BASE_HREF, useValue: '/'},
       ]
     }).compileComponents();
   }));
