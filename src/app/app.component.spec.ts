@@ -1,14 +1,19 @@
 import { TestBed, async } from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { UserService } from './user/user.service';
 describe('AppComponent', () => {
   beforeEach(async(() => {
+    const userServiceSpy = jasmine.createSpyObj('UserService', ['getUsers', 'deleteUser', 'createUser']);
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
       imports: [
-        RouterTestingModule.withRoutes([])
+        RouterTestingModule
+      ],
+      providers: [
+        { provide: UserService, useValue: userServiceSpy }
       ]
     }).compileComponents();
   }));
