@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://169.50.21.6:30696/user-portal/users'
+  apiUrl: 'http://50.23.5.203:32519/user-portal/users'
 };
